@@ -1,0 +1,245 @@
+@charset "UTF-8";
+:root {
+  --fundo-escuro: #0a192f;
+  --destaques: #00b4d8;
+  --acoes-secundarios: #ff6b00;
+  --detalhes: #ffa94d;
+  --textos-secundarios: #e0e0e0;
+  --textos-principais: #f5f5f5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--fundo-escuro);
+}
+
+/* ====== LINKS E LISTAS ====== */
+li {
+  color: var(--destaques);
+  font-size: 200%;
+}
+li:hover {
+  color: var(--detalhes);
+}
+
+a {
+  color: var(--destaques);
+}
+a:active, a:visited {
+  color: inherit;
+}
+
+/* ====== TEXTOS ====== */
+h1 {
+  color: var(--textos-principais);
+  font-size: 500%;
+}
+
+h2 {
+  font-size: 300%;
+}
+
+p {
+  font-size: 150%;
+}
+
+/* ====== BOTÃO ====== */
+.botao {
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 2px solid var(--destaques);
+  color: var(--detalhes);
+  background: transparent;
+  border-radius: 5px;
+  transition: 0.3s;
+  grid-column: 1;
+}
+.botao:hover {
+  border-color: var(--detalhes);
+  color: var(--destaques);
+}
+
+/* ====== SEÇÕES ====== */
+.claro {
+  background-image: url(imgs/2.png);
+  color: var(--detalhes);
+}
+.claro h2 {
+  color: var(--destaques);
+  grid-column: 2;
+}
+.claro p {
+  grid-column: 2;
+}
+.claro span {
+  color: var(--destaques);
+}
+
+.escuro {
+  background-image: url(imgs/1.png);
+  color: var(--destaques);
+}
+.escuro h2 {
+  color: var(--detalhes);
+  grid-column: 1;
+}
+.escuro p {
+  grid-column: 1;
+}
+.escuro span {
+  color: var(--detalhes);
+}
+
+.contactLink {
+  color: var(--destaques);
+}
+.contactLink:hover {
+  color: var(--detalhes);
+}
+
+/* ====== CABEÇALHO ====== */
+header {
+  background-image: url(imgs/1.png);
+  color: var(--destaques);
+}
+header h1 {
+  color: var(--detalhes);
+  grid-column: 1;
+}
+header ul {
+  grid-column: 1;
+}
+
+/* ====== LAYOUT PADRÃO ====== */
+header,
+section {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  align-items: center;
+  width: 100%;
+  height: 600px;
+  padding: 50px 80px;
+}
+
+/* ====================================================== */
+/* ===================== MEDIA QUERIES ================== */
+/* ====================================================== */
+/* 📱 Celulares */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 400%;
+  }
+  h2 {
+    font-size: 250%;
+  }
+  p {
+    font-size: 150%;
+  }
+  header,
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 30px;
+    height: 500px;
+    background-image: none;
+  }
+  .botao {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    padding: 0;
+  }
+  /* Fundos sólidos para mobile */
+  .claro {
+    background: var(--textos-principais);
+    color: var(--fundo-escuro);
+  }
+  .escuro {
+    background: var(--fundo-escuro);
+    color: var(--textos-principais);
+  }
+  header {
+    background: var(--fundo-escuro);
+  }
+}
+/* 💻 Tablets */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  h1 {
+    font-size: 400%;
+    grid-column: 1;
+  }
+  h2 {
+    font-size: 250%;
+  }
+  p {
+    font-size: 170%;
+  }
+  header,
+  section {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    padding: 40px;
+    height: 500px;
+  }
+  .claro {
+    background-image: url(imgs/2.png);
+  }
+  .claro h2 {
+    grid-column: 2;
+  }
+  .claro p {
+    grid-column: 2;
+  }
+  .escuro,
+  header {
+    background-image: url(imgs/1.png);
+  }
+  .escuro h2,
+  header h2 {
+    grid-column: 1;
+  }
+  .escuro p,
+  header p {
+    grid-column: 1;
+  }
+}
+/* 🖥️ Notebooks e Desktops */
+@media screen and (min-width: 1025px) {
+  h1 {
+    font-size: 500%;
+  }
+  h2 {
+    font-size: 300%;
+  }
+  p {
+    font-size: 150%;
+  }
+  .claro {
+    background-image: url(imgs/2.png);
+  }
+  .escuro,
+  header {
+    background-image: url(imgs/1.png);
+  }
+}/*# sourceMappingURL=style.css.map */
